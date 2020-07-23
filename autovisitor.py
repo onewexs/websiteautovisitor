@@ -36,9 +36,9 @@ class Connect:
        self.req.set_proxy(proxy,'http')
        if count%4==0:
          if self.con_total > 2*count:
-            time_stamp = 6
+            time_stamp = 60
          else:
-            time_stamp = 3
+            time_stamp = 30
        threading.Thread(target=self.visitURL).start()
        time.sleep(time_stamp)
        count += 1
