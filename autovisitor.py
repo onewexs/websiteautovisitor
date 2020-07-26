@@ -36,11 +36,13 @@ class Connect:
        self.req.set_proxy(proxy,'http')
        if count%4==0:
          if self.con_total > 2*count:
-            time_stamp = 60
+            time_stamp = random.randrange(1,160)
+            print ("time stemp : "+str(time_stamp))
          else:
-            time_stamp = 30
+            time_stamp = random.randrange(1,180)
+            print ("time stemp : "+str(time_stamp))
        threading.Thread(target=self.visitURL).start()
-       time.sleep(time_stamp)
+       time.sleep(random.randrange(1,160))
        count += 1
 
    def visit(self):
